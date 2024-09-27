@@ -1,0 +1,76 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function to print a separator line
+void printLine() {
+    cout << "----------------------------------------" << endl;
+}
+
+// Function to display personal information
+void displayPersonalInfo(const string &name, const string &email, const string &phone) {
+    printLine();
+    cout << "Name   : " << name << endl;
+    cout << "Email  : " << email << endl;
+    cout << "Phone  : " << phone << endl;
+    printLine();
+}
+
+// Function to display the education section
+void displayEducation(const string &degree, const string &university, int year, double gpa) {
+    cout << "Education:" << endl;
+    cout << "Degree     : " << degree << endl;
+    cout << "University : " << university << endl;
+    cout << "Graduation : " << year << endl;
+    cout << "GPA        : " << gpa << endl;
+    printLine();
+}
+
+// Function to display work experience
+void displayExperience(const string &jobTitle, const string &company, int startYear, int endYear) {
+    cout << "Work Experience:" << endl;
+    cout << "Position   : " << jobTitle << endl;
+    cout << "Company    : " << company << endl;
+    cout << "Duration   : " << startYear << " - " << endYear << endl;
+    printLine();
+}
+
+// Function to display skills
+void displaySkills(const string skills[], int size) {
+    cout << "Skills:" << endl;
+    for (int i = 0; i < size; ++i) {
+        cout << "- " << skills[i] << endl;
+    }
+    printLine();
+}
+
+int main() {
+    // Personal information
+    string name = "Mandar Wasekar";
+    string email = "wasekarmandar@gmail.com";
+    string phone = "9699395125";
+
+    // Education details
+    string degree = "Bachelor of Artificial Intelligence";
+    string university = "Pune University";
+    int graduationYear = 2027;
+    double gpa = 3.8;
+
+    // Work experience
+    string jobTitle = "Software Engineer";
+    string company = "Tech Solutions Inc.";
+    int startYear = 2023;
+    int endYear = 2027;
+
+    // Skills
+    string skills[] = {"C++", "Python", "Data Structures", "Algorithms", "Version Control (Git)"};
+    int skillSize = sizeof(skills) / sizeof(skills[0]);
+
+    // Display resume
+    displayPersonalInfo(name, email, phone);
+    displayEducation(degree, university, graduationYear, gpa);
+    displayExperience(jobTitle, company, startYear, endYear);
+    displaySkills(skills, skillSize);
+
+    return 0;
+}
